@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="3"
+    name="AccessibilityService"
+    description="Creates a new AccessibilityService component and adds it to your Android manifest.">
+  
+    <category value="Service" />
+  
+    <parameter
+        id="className"
+        name="AccessibilityService"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="MyAccessibilityService"     
+		help="The name of the AccessibilityService component class to create"/>
+    
+	<parameter
+        id="componentName"
+        name="组件名称"
+        type="string"
+        default="自助服务"     
+		help="要创建的组件的名称，可以为空"/>
+		
+    <parameter
+        id="isExported"
+        name="Exported"
+        type="boolean"
+        default="true"
+        help="Whether or not the Accessibility Service can receive messages from sources outside its application"/>
+
+    <parameter
+        id="isEnabled"
+        name="Enabled"
+        type="boolean"
+        default="true"
+        help="Whether or not the Accessibility Service can be instantiated by the system" />
+    
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp"/>
+  
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
